@@ -1,0 +1,364 @@
+:root {
+    color-scheme: dark;
+    --bg: #0a0a0a;
+    --surface: #131313;
+    --surface2: #1a1a1a;
+    --border: #262626;
+    --text: #f2f2f2;
+    --muted: #8a8a8a;
+    --accent: #ffffff;
+    --accent-text: #0a0a0a;
+    --danger: #ff5c5c;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --surface2: #f2f2f2;
+    --border: #e4e4e4;
+    --text: #111111;
+    --muted: #6b6b6b;
+    --accent: #111111;
+    --accent-text: #ffffff;
+    --danger: #e03131;
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 1rem;
+    display: grid;
+    place-items: center
+}
+
+.theme-btn:hover {
+    background: var(--surface2)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh
+}
+
+button,
+input {
+    font: inherit;
+    color: inherit
+}
+
+.app {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 16px 40px
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem
+}
+
+.brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--accent-text);
+    display: grid;
+    place-items: center;
+    font-weight: 800
+}
+
+.today {
+    color: var(--muted);
+    font-size: .85rem
+}
+
+.welcome {
+    margin-bottom: 28px
+}
+
+.eyebrow {
+    font-size: .7rem;
+    letter-spacing: .16em;
+    color: var(--muted);
+    font-weight: 600
+}
+
+h1 {
+    font-size: clamp(1.9rem, 6vw, 2.5rem);
+    line-height: 1.15;
+    margin: 8px 0;
+    font-weight: 700
+}
+
+h1 span {
+    color: var(--muted)
+}
+
+.subtitle {
+    color: var(--muted)
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px
+}
+
+.stat-label {
+    display: block;
+    font-size: .75rem;
+    color: var(--muted)
+}
+
+.stat-card strong {
+    font-size: 1.6rem;
+    font-weight: 700
+}
+
+.task-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px
+}
+
+.panel-heading h2 {
+    font-size: 1.1rem
+}
+
+.panel-heading p {
+    color: var(--muted);
+    font-size: .85rem
+}
+
+.task-badge {
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .75rem;
+    padding: 3px 10px;
+    border-radius: 99px
+}
+
+.task-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px
+}
+
+.task-form input {
+    flex: 1;
+    min-width: 0;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    outline: none
+}
+
+.task-form input:focus {
+    border-color: var(--muted)
+}
+
+.add-btn {
+    background: var(--accent);
+    color: var(--accent-text);
+    border: 0;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap
+}
+
+.add-btn:hover {
+    opacity: .85
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px
+}
+
+.filter {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: .85rem
+}
+
+.filter:hover {
+    color: var(--text)
+}
+
+.filter.active {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+    font-weight: 600
+}
+
+.task-list {
+    list-style: none;
+    padding: 0
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--border)
+}
+
+.task input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex: none
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word
+}
+
+.task.done .task-text {
+    text-decoration: line-through;
+    color: var(--muted)
+}
+
+.del {
+    background: none;
+    border: 0;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 6px
+}
+
+.del:hover {
+    color: var(--danger);
+    background: var(--surface2)
+}
+
+.empty-state {
+    text-align: center;
+    padding: 36px 10px;
+    color: var(--muted)
+}
+
+.empty-state[hidden] {
+    display: none
+}
+
+.empty-icon {
+    font-size: 1.6rem;
+    margin-bottom: 4px
+}
+
+.empty-state h3 {
+    color: var(--text);
+    font-size: 1rem
+}
+
+.empty-state p {
+    font-size: .88rem
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    font-size: .85rem;
+    color: var(--muted)
+}
+
+.clear-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer
+}
+
+.clear-btn:hover {
+    color: var(--danger);
+    border-color: var(--danger)
+}
+
+.app-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .8rem;
+    margin-top: 24px
+}
+
+@media(max-width:480px) {
+    .today {
+        display: none
+    }
+
+    .stat-card {
+        padding: 10px 12px
+    }
+}
